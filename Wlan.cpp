@@ -26,7 +26,7 @@ bool Wlan::IsNetAvailable( const char * ssid )
 
                     if (WlanGetAvailableNetworkList( m_handle, &wlanInterfaces->InterfaceInfo[i].InterfaceGuid, 0, NULL, &wlanNetworks ) == ERROR_SUCCESS) {
                         for (int j = 0; j < wlanNetworks->dwNumberOfItems; j++) {
-                            if (_strnicmp( (const char *) wlanNetworks->Network[j].dot11Ssid.ucSSID, ssid, wlanNetworks->Network[j].dot11Ssid.uSSIDLength ) == 0) {
+                            if (_strnicmp( (const char *) wlanNetworks->Network[j].dot11Ssid.ucSSID, ssid, strlen(ssid) ) == 0) {
                                 result = true;
                                 break;
                             }
